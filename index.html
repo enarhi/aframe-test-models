@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, WebVR! - A-Frame</title>
+    <meta name="description" content="Hello, WebVR! - A-Frame">
+    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-teleport-controls/dist/aframe-teleport-controls.min.js"></script>  
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <a-asset-item id="model" src="https://cdn.glitch.com/400eb22f-0d37-4603-bf2c-e8192edd69e9%2FBlobTower%20Test%20mesh.obj?1505841825622"></a-asset-item>
+        <a-asset-item id="material" src="https://cdn.glitch.com/400eb22f-0d37-4603-bf2c-e8192edd69e9%2FBlobTower%20Test%20mesh.mtl?1505841812068"></a-asset-item>
+      </a-assets>
+    <a-obj-model src="#model" mtl="#material" scale="0.5 0.5 0.5"></a-obj-model>
+    <a-entity environment="preset: default; numDressing: 10"></a-entity>
+      
+     <!-- hand controls -->
+      <a-entity teleport-controls vive-controls="hand: left"></a-entity>
+      <a-entity teleport-controls="type: line" vive-controls="hand: right"></a-entity>
+      
+      <a-sky color="#ECECEC"></a-sky>
+    </a-scene>
+  </body>
+</html>
